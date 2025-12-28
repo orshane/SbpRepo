@@ -1,0 +1,7 @@
+PORTNAME=micro
+VERSION=2.0.12
+FETCH_CMD=curl -L https://github.com/zyedidia/micro/archive/refs/tags/v2.0.12.tar.gz -o var/distfiles/micro-2.0.12.tar.gz
+BUILD_CMD=tar -xf var/distfiles/micro-2.0.12.tar.gz -C var/work && cd var/work/micro-2.0.12 && make
+INSTALL_CMD=cd var/work/micro-2.0.12 && sudo make install
+UNINSTALL_CMD=sudo rm /usr/local/bin/micro
+

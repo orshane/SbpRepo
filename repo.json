@@ -1,0 +1,11 @@
+{
+  "editors/micro": {
+    "url": "https://github.com/zyedidia/micro/releases/download/v2.0.12/micro-2.0.12.tar.gz",
+    "version": "2.0.12"
+  },
+  "editors/vim": {
+    "url": "https://github.com/vim/vim/archive/v9.1.0123.tar.gz",
+    "version": "9.1.0123"
+  }
+}
+
