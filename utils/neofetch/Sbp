@@ -1,0 +1,6 @@
+PORTNAME=neofetch
+VERSION=7.1.0
+FETCH_CMD=curl -L https://github.com/dylanaraps/neofetch/archive/refs/tags/7.1.0.tar.gz -o /usr/local/var/sbpi/distfiles/neofetch-7.1.0.tar.gz
+BUILD_CMD=tar -xzf /usr/local/var/sbpi/distfiles/neofetch-7.1.0.tar.gz -C /usr/local/var/sbpi/work
+INSTALL_CMD=cd /usr/local/var/sbpi/work/neofetch-7.1.0 && sudo make install PREFIX=/usr/local
+UNINSTALL_CMD=cd /usr/local/var/sbpi/work/neofetch-7.1.0 && sudo make uninstall PREFIX=/usr/local || sudo rm -f /usr/local/bin/neofetch
