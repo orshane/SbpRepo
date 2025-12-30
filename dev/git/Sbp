@@ -1,0 +1,6 @@
+PORTNAME=git
+VERSION=2.43.0
+FETCH_CMD=curl -L https://github.com/git/git/archive/refs/tags/v2.43.0.tar.gz -o /usr/local/var/sbpi/distfiles/git-2.43.0.tar.gz
+BUILD_CMD=tar -xzf /usr/local/var/sbpi/distfiles/git-2.43.0.tar.gz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/git-2.43.0 && make configure && ./configure --prefix=/usr/local && make -j$(nproc)
+INSTALL_CMD=cd /usr/local/var/sbpi/work/git-2.43.0 && sudo make install
+UNINSTALL_CMD=cd /usr/local/var/sbpi/work/git-2.43.0 && sudo make uninstall || sudo rm -f /usr/local/bin/git
