@@ -1,0 +1,6 @@
+PORTNAME=fortune
+VERSION=1.2
+FETCH_CMD=curl -L https://github.com/shlomif/fortune-mod/archive/refs/tags/fortune-mod-1.2.tar.gz -o /usr/local/var/sbpi/distfiles/fortune-1.2.tar.gz
+BUILD_CMD=tar -xzf /usr/local/var/sbpi/distfiles/fortune-1.2.tar.gz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/fortune-mod-fortune-mod-1.2 && make V=1
+INSTALL_CMD=cd /usr/local/var/sbpi/work/fortune-mod-fortune-mod-1.2 && sudo make install
+UNINSTALL_CMD=cd /usr/local/var/sbpi/work/fortune-mod-fortune-mod-1.2 && sudo make uninstall
