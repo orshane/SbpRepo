@@ -1,6 +1,6 @@
 PORTNAME=micro
 VERSION=2.0.12
 FETCH_CMD=curl -L https://github.com/zyedidia/micro/archive/refs/tags/v2.0.12.tar.gz -o /usr/local/var/sbpi/distfiles/micro-2.0.12.tar.gz
-BUILD_CMD=tar -xzf /usr/local/var/sbpi/distfiles/micro-2.0.12.tar.gz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/micro-2.0.12 && make build
+BUILD_CMD=tar -xzf /usr/local/var/sbpi/distfiles/micro-2.0.12.tar.gz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/micro-2.0.12 && make build V=1
 INSTALL_CMD=cd /usr/local/var/sbpi/work/micro-2.0.12 && sudo cp micro /usr/local/bin/ && sudo chmod +x /usr/local/bin/micro
 UNINSTALL_CMD=sudo rm -f /usr/local/bin/micro
