@@ -1,0 +1,6 @@
+PORTNAME=mc
+VERSION=4.8.31
+FETCH_CMD=curl -L https://ftp.osuosl.org/pub/midnightcommander/mc-4.8.31.tar.xz -o /usr/local/var/sbpi/distfiles/mc-4.8.31.tar.xz
+BUILD_CMD=tar -xf /usr/local/var/sbpi/distfiles/mc-4.8.31.tar.xz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/mc-4.8.31 && ./configure --prefix=/usr/local && make V=1
+INSTALL_CMD=cd /usr/local/var/sbpi/work/mc-4.8.31 && sudo make install
+UNINSTALL_CMD=cd /usr/local/var/sbpi/work/mc-4.8.31 && sudo make uninstall
