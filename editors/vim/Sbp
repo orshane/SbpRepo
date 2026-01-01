@@ -1,7 +1,7 @@
 PORTNAME=vim
 VERSION=9.1.0123
 FETCH_CMD=curl -L https://github.com/vim/vim/archive/v9.1.0123.tar.gz -o var/distfiles/vim-9.1.0123.tar.gz
-BUILD_CMD=tar -xf var/distfiles/vim-9.1.0123.tar.gz -C var/work && cd var/work/vim-9.1.0123 && ./configure --prefix=/usr/local && make
+BUILD_CMD=tar -xf var/distfiles/vim-9.1.0123.tar.gz -C var/work && cd var/work/vim-9.1.0123 && ./configure --prefix=/usr/local && make V=1
 INSTALL_CMD=cd var/work/vim-9.1.0123 && sudo make install
 UNINSTALL_CMD=sudo rm /usr/local/bin/vim
 
