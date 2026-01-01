@@ -1,0 +1,6 @@
+PORTNAME=otter-browser
+VERSION=1.0.03
+FETCH_CMD=curl -L https://github.com/OtterBrowser/otter-browser/archive/refs/tags/v1.0.03.tar.gz -o /usr/local/var/sbpi/distfiles/otter-browser-1.0.03.tar.gz
+BUILD_CMD=tar -xzf /usr/local/var/sbpi/distfiles/otter-browser-1.0.03.tar.gz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/otter-browser-1.0.03 && mkdir -p build && cd build && cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local && make -j$(nproc)
+INSTALL_CMD=cd /usr/local/var/sbpi/work/otter-browser-1.0.03/build && sudo make install
+UNINSTALL_CMD=cd /usr/local/var/sbpi/work/otter-browser-1.0.03/build && sudo make uninstall || sudo rm -f /usr/local/bin/otter-browser

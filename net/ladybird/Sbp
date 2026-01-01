@@ -1,6 +1,0 @@
-PORTNAME=ladybird
-VERSION=latest
-FETCH_CMD=git clone --depth 1 https://github.com/SerenityOS/serenity /usr/local/var/sbpi/work/serenity
-BUILD_CMD=cd /usr/local/var/sbpi/work/serenity && mkdir -p Build && cd Build && cmake .. -GNinja && ninja ladybird
-INSTALL_CMD=sudo cp /usr/local/var/sbpi/work/serenity/Build/Meta/Ladybird/ladybird /usr/local/bin/ && sudo chmod +x /usr/local/bin/ladybird
-UNINSTALL_CMD=sudo rm -f /usr/local/bin/ladybird
