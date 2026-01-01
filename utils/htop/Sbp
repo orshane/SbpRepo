@@ -1,6 +1,6 @@
 PORTNAME=htop
 VERSION=3.2.2
 FETCH_CMD=curl -L https://github.com/htop-dev/htop/archive/refs/tags/3.2.2.tar.gz -o /usr/local/var/sbpi/distfiles/htop-3.2.2.tar.gz
-BUILD_CMD=tar -xzf /usr/local/var/sbpi/distfiles/htop-3.2.2.tar.gz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/htop-3.2.2 && ./autogen.sh && ./configure --prefix=/usr/local && make
+BUILD_CMD=tar -xzf /usr/local/var/sbpi/distfiles/htop-3.2.2.tar.gz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/htop-3.2.2 && ./autogen.sh && ./configure --prefix=/usr/local && make V=1
 INSTALL_CMD=cd /usr/local/var/sbpi/work/htop-3.2.2 && sudo make install
 UNINSTALL_CMD=cd /usr/local/var/sbpi/work/htop-3.2.2 && sudo make uninstall || sudo rm -f /usr/local/bin/htop
