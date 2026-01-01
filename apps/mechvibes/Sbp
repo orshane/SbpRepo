@@ -1,0 +1,6 @@
+PORTNAME=mechvibes
+VERSION=2.3.0
+FETCH_CMD=curl -L https://github.com/hainguyents13/mechvibes/archive/refs/tags/v2.3.0.tar.gz -o /usr/local/var/sbpi/distfiles/mechvibes-2.3.0.tar.gz
+BUILD_CMD=tar -xzf /usr/local/var/sbpi/distfiles/mechvibes-2.3.0.tar.gz -C /usr/local/var/sbpi/work
+INSTALL_CMD=cd /usr/local/var/sbpi/work/mechvibes-2.3.0 && pip3 install -r requirements.txt && sudo python3 setup.py install --prefix=/usr/local
+UNINSTALL_CMD=cd /usr/local/var/sbpi/work/mechvibes-2.3.0 && sudo python3 setup.py install --prefix=/usr/local --record=/tmp/mechvibes-files.txt && xargs sudo rm -f < /tmp/mechvibes-files.txt || sudo rm -f /usr/local/bin/mechvibes
