@@ -1,0 +1,6 @@
+PORTNAME=webkitgtk
+VERSION=2.42.5
+FETCH_CMD=curl -L https://webkitgtk.org/releases/webkitgtk-2.42.5.tar.xz -o /usr/local/var/sbpi/distfiles/webkitgtk-2.42.5.tar.xz
+BUILD_CMD=tar -xf /usr/local/var/sbpi/distfiles/webkitgtk-2.42.5.tar.xz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/webkitgtk-2.42.5 && cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local -DPORT=GTK -DENABLE_MINIBROWSER=ON && cmake --build build --parallel
+INSTALL_CMD=cd /usr/local/var/sbpi/work/webkitgtk-2.42.5 && sudo cmake --install build
+UNINSTALL_CMD=cd /usr/local/var/sbpi/work/webkitgtk-2.42.5/build && xargs sudo rm -f < install_manifest.txt
