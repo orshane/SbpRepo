@@ -1,0 +1,6 @@
+PORTNAME=cowsay
+VERSION=3.04
+FETCH_CMD=curl -L https://github.com/tnalpgge/rank-amateur-cowsay/archive/refs/tags/cowsay-3.04.tar.gz -o /usr/local/var/sbpi/distfiles/cowsay-3.04.tar.gz
+BUILD_CMD=tar -xzf /usr/local/var/sbpi/distfiles/cowsay-3.04.tar.gz -C /usr/local/var/sbpi/work
+INSTALL_CMD=cd /usr/local/var/sbpi/work/rank-amateur-cowsay-cowsay-3.04 && sudo make install prefix=/usr/local
+UNINSTALL_CMD=cd /usr/local/var/sbpi/work/rank-amateur-cowsay-cowsay-3.04 && sudo make uninstall prefix=/usr/local
