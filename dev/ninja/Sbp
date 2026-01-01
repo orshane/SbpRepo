@@ -1,0 +1,6 @@
+PORTNAME=ninja
+VERSION=1.11.1
+FETCH_CMD=curl -L https://github.com/ninja-build/ninja/archive/refs/tags/v1.11.1.tar.gz -o /usr/local/var/sbpi/distfiles/ninja-1.11.1.tar.gz
+BUILD_CMD=tar -xzf /usr/local/var/sbpi/distfiles/ninja-1.11.1.tar.gz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/ninja-1.11.1 && cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local && cmake --build build --verbose
+INSTALL_CMD=cd /usr/local/var/sbpi/work/ninja-1.11.1 && sudo cmake --install build
+UNINSTALL_CMD=cd /usr/local/var/sbpi/work/ninja-1.11.1/build && xargs sudo rm -f < install_manifest.txt
