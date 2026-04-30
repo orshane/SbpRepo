@@ -1,6 +1,0 @@
-PORTNAME=rustup
-VERSION=1.27.1
-FETCH_CMD=curl -L https://github.com/rust-lang/rustup/archive/refs/tags/1.27.1.tar.gz -o /usr/local/var/sbpi/distfiles/rustup-1.27.1.tar.gz
-BUILD_CMD=tar -xzf /usr/local/var/sbpi/distfiles/rustup-1.27.1.tar.gz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/rustup-1.27.1 && cargo build --release
-INSTALL_CMD=cd /usr/local/var/sbpi/work/rustup-1.27.1 && sudo cp target/release/rustup-init /usr/local/bin/rustup-init && sudo /usr/local/bin/rustup-init -y --no-modify-path && sudo ln -sf $HOME/.cargo/bin/rustup /usr/local/bin/rustup
-UNINSTALL_CMD=rustup self uninstall || true && sudo rm -f /usr/local/bin/rustup /usr/local/bin/rustup-init
