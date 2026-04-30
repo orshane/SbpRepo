@@ -1,0 +1,6 @@
+PORTNAME=neovim
+VERSION=0.10.4
+FETCH_CMD=curl -L https://github.com/neovim/neovim/archive/refs/tags/v0.10.4.tar.gz -o /usr/local/var/sbpi/distfiles/neovim-0.10.4.tar.gz
+BUILD_CMD=tar -xzf /usr/local/var/sbpi/distfiles/neovim-0.10.4.tar.gz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/neovim-0.10.4 && make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=/usr/local
+INSTALL_CMD=cd /usr/local/var/sbpi/work/neovim-0.10.4 && sudo make install
+UNINSTALL_CMD=sudo rm -f /usr/local/bin/nvim && sudo rm -rf /usr/local/share/nvim
