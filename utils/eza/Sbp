@@ -1,0 +1,6 @@
+PORTNAME=eza
+VERSION=0.21.3
+FETCH_CMD=curl -L https://github.com/eza-community/eza/archive/refs/tags/v0.21.3.tar.gz -o /usr/local/var/sbpi/distfiles/eza-0.21.3.tar.gz
+BUILD_CMD=tar -xzf /usr/local/var/sbpi/distfiles/eza-0.21.3.tar.gz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/eza-0.21.3 && cargo build --release
+INSTALL_CMD=cd /usr/local/var/sbpi/work/eza-0.21.3 && sudo cp target/release/eza /usr/local/bin/eza
+UNINSTALL_CMD=sudo rm -f /usr/local/bin/eza
