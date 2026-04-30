@@ -1,0 +1,6 @@
+PORTNAME=zsh
+VERSION=5.9
+FETCH_CMD=curl -L https://sourceforge.net/projects/zsh/files/zsh/5.9/zsh-5.9.tar.xz -o /usr/local/var/sbpi/distfiles/zsh-5.9.tar.xz
+BUILD_CMD=tar -xJf /usr/local/var/sbpi/distfiles/zsh-5.9.tar.xz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/zsh-5.9 && ./configure --prefix=/usr/local && make -j$(nproc)
+INSTALL_CMD=cd /usr/local/var/sbpi/work/zsh-5.9 && sudo make install
+UNINSTALL_CMD=sudo rm -f /usr/local/bin/zsh && sudo rm -rf /usr/local/share/zsh
