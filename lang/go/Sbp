@@ -1,0 +1,6 @@
+PORTNAME=go
+VERSION=1.24.2
+FETCH_CMD=curl -L https://go.dev/dl/go1.24.2.src.tar.gz -o /usr/local/var/sbpi/distfiles/go-1.24.2.src.tar.gz
+BUILD_CMD=tar -xzf /usr/local/var/sbpi/distfiles/go-1.24.2.src.tar.gz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/go/src && GOROOT_BOOTSTRAP=$(go env GOROOT) ./make.bash
+INSTALL_CMD=sudo cp -r /usr/local/var/sbpi/work/go /usr/local/go && sudo ln -sf /usr/local/go/bin/go /usr/local/bin/go && sudo ln -sf /usr/local/go/bin/gofmt /usr/local/bin/gofmt
+UNINSTALL_CMD=sudo rm -rf /usr/local/go && sudo rm -f /usr/local/bin/go /usr/local/bin/gofmt
