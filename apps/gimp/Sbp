@@ -1,0 +1,6 @@
+PORTNAME=gimp
+VERSION=3.0.2
+FETCH_CMD=curl -L https://download.gimp.org/gimp/v3.0/gimp-3.0.2.tar.xz -o /usr/local/var/sbpi/distfiles/gimp-3.0.2.tar.xz
+BUILD_CMD=tar -xJf /usr/local/var/sbpi/distfiles/gimp-3.0.2.tar.xz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/gimp-3.0.2 && meson setup build --prefix=/usr/local && ninja -C build
+INSTALL_CMD=cd /usr/local/var/sbpi/work/gimp-3.0.2 && sudo ninja -C build install
+UNINSTALL_CMD=sudo rm -f /usr/local/bin/gimp && sudo rm -rf /usr/local/share/gimp
