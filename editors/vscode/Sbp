@@ -1,0 +1,6 @@
+PORTNAME=vscode
+VERSION=1.99.0
+FETCH_CMD=curl -L https://github.com/microsoft/vscode/archive/refs/tags/1.99.0.tar.gz -o /usr/local/var/sbpi/distfiles/vscode-1.99.0.tar.gz
+BUILD_CMD=tar -xzf /usr/local/var/sbpi/distfiles/vscode-1.99.0.tar.gz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/vscode-1.99.0 && npm install && npm run compile
+INSTALL_CMD=cd /usr/local/var/sbpi/work/vscode-1.99.0 && sudo mkdir -p /usr/local/lib/vscode && sudo cp -r . /usr/local/lib/vscode && sudo ln -sf /usr/local/lib/vscode/scripts/code.sh /usr/local/bin/code
+UNINSTALL_CMD=sudo rm -rf /usr/local/lib/vscode && sudo rm -f /usr/local/bin/code
