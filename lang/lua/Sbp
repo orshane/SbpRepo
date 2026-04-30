@@ -1,0 +1,6 @@
+PORTNAME=lua
+VERSION=5.4.7
+FETCH_CMD=curl -L https://www.lua.org/ftp/lua-5.4.7.tar.gz -o /usr/local/var/sbpi/distfiles/lua-5.4.7.tar.gz
+BUILD_CMD=tar -xzf /usr/local/var/sbpi/distfiles/lua-5.4.7.tar.gz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/lua-5.4.7 && make -j$(nproc) linux
+INSTALL_CMD=cd /usr/local/var/sbpi/work/lua-5.4.7 && sudo make install INSTALL_TOP=/usr/local
+UNINSTALL_CMD=sudo rm -f /usr/local/bin/lua /usr/local/bin/luac && sudo rm -rf /usr/local/lib/liblua*
