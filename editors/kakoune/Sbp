@@ -1,0 +1,6 @@
+PORTNAME=kakoune
+VERSION=2024.05.18
+FETCH_CMD=curl -L https://github.com/mawww/kakoune/archive/refs/tags/v2024.05.18.tar.gz -o /usr/local/var/sbpi/distfiles/kakoune-2024.05.18.tar.gz
+BUILD_CMD=tar -xzf /usr/local/var/sbpi/distfiles/kakoune-2024.05.18.tar.gz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/kakoune-2024.05.18/src && make -j$(nproc)
+INSTALL_CMD=cd /usr/local/var/sbpi/work/kakoune-2024.05.18/src && sudo make install PREFIX=/usr/local
+UNINSTALL_CMD=sudo rm -f /usr/local/bin/kak && sudo rm -rf /usr/local/share/kak
