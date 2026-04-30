@@ -1,6 +1,6 @@
 PORTNAME=xhwm
 VERSION=main
 FETCH_CMD=curl -L https://codeberg.org/orshane111/XHWM/archive/main.tar.gz -o /usr/local/var/sbpi/distfiles/xhwm-main.tar.gz
-BUILD_CMD=tar -xzf /usr/local/var/sbpi/distfiles/xhwm-main.tar.gz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/XHWM && zig build -Doptimize=ReleaseFast
-INSTALL_CMD=cd /usr/local/var/sbpi/work/XHWM && sudo cp zig-out/bin/xhwm /usr/local/bin/xhwm
+BUILD_CMD=tar -xzf /usr/local/var/sbpi/distfiles/xhwm-main.tar.gz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/xhwm && zig build -Doptimize=ReleaseFast
+INSTALL_CMD=cd /usr/local/var/sbpi/work/xhwm && sudo cp zig-out/bin/xhwm /usr/local/bin/xhwm
 UNINSTALL_CMD=sudo rm -f /usr/local/bin/xhwm
