@@ -1,0 +1,6 @@
+PORTNAME=ruby
+VERSION=3.4.3
+FETCH_CMD=curl -L https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.3.tar.xz -o /usr/local/var/sbpi/distfiles/ruby-3.4.3.tar.xz
+BUILD_CMD=tar -xJf /usr/local/var/sbpi/distfiles/ruby-3.4.3.tar.xz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/ruby-3.4.3 && ./configure --prefix=/usr/local --enable-shared && make -j$(nproc)
+INSTALL_CMD=cd /usr/local/var/sbpi/work/ruby-3.4.3 && sudo make install
+UNINSTALL_CMD=sudo rm -f /usr/local/bin/ruby /usr/local/bin/gem /usr/local/bin/irb && sudo rm -rf /usr/local/lib/ruby
