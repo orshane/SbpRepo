@@ -1,0 +1,6 @@
+PORTNAME=curl
+VERSION=8.13.0
+FETCH_CMD=curl -L https://github.com/curl/curl/releases/download/curl-8_13_0/curl-8.13.0.tar.xz -o /usr/local/var/sbpi/distfiles/curl-8.13.0.tar.xz
+BUILD_CMD=tar -xJf /usr/local/var/sbpi/distfiles/curl-8.13.0.tar.xz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/curl-8.13.0 && ./configure --prefix=/usr/local --with-openssl && make -j$(nproc)
+INSTALL_CMD=cd /usr/local/var/sbpi/work/curl-8.13.0 && sudo make install
+UNINSTALL_CMD=sudo rm -f /usr/local/bin/curl && sudo rm -rf /usr/local/lib/libcurl*
