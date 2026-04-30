@@ -1,0 +1,6 @@
+PORTNAME=fish
+VERSION=4.0.1
+FETCH_CMD=curl -L https://github.com/fish-shell/fish-shell/archive/refs/tags/4.0.1.tar.gz -o /usr/local/var/sbpi/distfiles/fish-4.0.1.tar.gz
+BUILD_CMD=tar -xzf /usr/local/var/sbpi/distfiles/fish-4.0.1.tar.gz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/fish-shell-4.0.1 && cargo build --release
+INSTALL_CMD=cd /usr/local/var/sbpi/work/fish-shell-4.0.1 && sudo cp target/release/fish /usr/local/bin/fish
+UNINSTALL_CMD=sudo rm -f /usr/local/bin/fish && sudo rm -rf /usr/local/share/fish
