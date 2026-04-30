@@ -1,0 +1,6 @@
+PORTNAME=vlc
+VERSION=3.0.21
+FETCH_CMD=curl -L https://get.videolan.org/vlc/3.0.21/vlc-3.0.21.tar.xz -o /usr/local/var/sbpi/distfiles/vlc-3.0.21.tar.xz
+BUILD_CMD=tar -xJf /usr/local/var/sbpi/distfiles/vlc-3.0.21.tar.xz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/vlc-3.0.21 && ./configure --prefix=/usr/local && make -j$(nproc)
+INSTALL_CMD=cd /usr/local/var/sbpi/work/vlc-3.0.21 && sudo make install
+UNINSTALL_CMD=sudo rm -f /usr/local/bin/vlc && sudo rm -rf /usr/local/lib/vlc
