@@ -1,0 +1,6 @@
+PORTNAME=nim
+VERSION=2.2.10
+FETCH_CMD=curl -L https://github.com/nim-lang/Nim/archive/refs/tags/v2.2.10.tar.gz -o /usr/local/var/sbpi/distfiles/nim-2.2.10.tar.gz && curl -L https://github.com/nim-lang/csources_v2/archive/refs/heads/master.tar.gz -o /usr/local/var/sbpi/distfiles/nim-csources.tar.gz
+BUILD_CMD=tar -xzf /usr/local/var/sbpi/distfiles/nim-2.2.10.tar.gz -C /usr/local/var/sbpi/work && tar -xzf /usr/local/var/sbpi/distfiles/nim-csources.tar.gz -C /usr/local/var/sbpi/work && mv /usr/local/var/sbpi/work/csources_v2-master /usr/local/var/sbpi/work/Nim-2.2.10/csources_v2 && cd /usr/local/var/sbpi/work/Nim-2.2.10 && sh build_all.sh
+INSTALL_CMD=cd /usr/local/var/sbpi/work/Nim-2.2.10 && sudo cp bin/nim /usr/local/bin/nim && sudo cp bin/nimble /usr/local/bin/nimble
+UNINSTALL_CMD=sudo rm -f /usr/local/bin/nim /usr/local/bin/nimble && sudo rm -rf /usr/local/lib/nim
