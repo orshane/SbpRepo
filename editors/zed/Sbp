@@ -1,0 +1,6 @@
+PORTNAME=zed
+VERSION=0.171.4
+FETCH_CMD=curl -L https://github.com/zed-industries/zed/archive/refs/tags/v0.171.4.tar.gz -o /usr/local/var/sbpi/distfiles/zed-0.171.4.tar.gz
+BUILD_CMD=tar -xzf /usr/local/var/sbpi/distfiles/zed-0.171.4.tar.gz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/zed-0.171.4 && cargo build --release
+INSTALL_CMD=cd /usr/local/var/sbpi/work/zed-0.171.4 && sudo cp target/release/zed /usr/local/bin/zed
+UNINSTALL_CMD=sudo rm -f /usr/local/bin/zed && sudo rm -rf ~/.config/zed ~/.local/share/zed
