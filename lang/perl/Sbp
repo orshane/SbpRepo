@@ -1,0 +1,6 @@
+PORTNAME=perl
+VERSION=5.40.0
+FETCH_CMD=curl -L https://www.cpan.org/src/5.0/perl-5.40.0.tar.xz -o /usr/local/var/sbpi/distfiles/perl-5.40.0.tar.xz
+BUILD_CMD=tar -xJf /usr/local/var/sbpi/distfiles/perl-5.40.0.tar.xz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/perl-5.40.0 && ./Configure -des -Dprefix=/usr/local && make -j$(nproc)
+INSTALL_CMD=cd /usr/local/var/sbpi/work/perl-5.40.0 && sudo make install
+UNINSTALL_CMD=sudo rm -f /usr/local/bin/perl && sudo rm -rf /usr/local/lib/perl5
