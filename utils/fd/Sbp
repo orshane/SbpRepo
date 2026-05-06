@@ -1,0 +1,6 @@
+PORTNAME=fd
+VERSION=v10.2.0
+FETCH_CMD=curl -L https://github.com/sharkdp/fd/archive/refs/tags/v10.2.0.tar.gz -o /usr/local/var/sbpi/distfiles/fd-10.2.0.tar.gz
+BUILD_CMD=tar -xzf /usr/local/var/sbpi/distfiles/fd-10.2.0.tar.gz -C /usr/local/var/sbpi/work && cd /usr/local/var/sbpi/work/fd-10.2.0 && rustup default stable &&cargo build --release
+INSTALL_CMD=cp /usr/local/var/sbpi/work/fd-10.2.0/target/release/fd /usr/local/bin/
+UNINSTALL_CMD=rm -f /usr/local/bin/fd
